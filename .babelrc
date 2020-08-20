@@ -1,0 +1,13 @@
+// 在不配置 @babel/plugin-transform-runtime 时，babel 会使用很小的辅助函数来实现类似 _createClass 等公共方法。默认情况下，它将被注入(inject)到需要它的每个文件中。
+// 但是这样的结果就是导致构建出来的JS体积变大。
+// 我们也并不需要在每个 js 中注入辅助函数，因此我们可以使用 @babel/plugin-transform-runtime，@babel/plugin-transform-runtime 是
+// 一个可以重复使用 Babel 注入的帮助程序，以节省代码大小的插件。
+// 因此我们可以在 .babelrc 中增加 @babel/plugin-transform-runtime 的配置。
+{
+    "presets": [],
+    "plugins": [
+        [
+            "@babel/plugin-transform-runtime"
+        ]
+    ]
+}
